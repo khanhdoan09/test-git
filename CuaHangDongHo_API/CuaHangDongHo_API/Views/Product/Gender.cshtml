@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "Gender";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model IEnumerable<CuaHangDongHo_API.Models.product>
+
+
+<div class="container-fluid bg-light breadcrumb-section">
+    <div class="container pt-2">
+        <div aria-label="breadcrumb ">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Product</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<div class="container pt-3 pb-3">
+    <div class="row gy-5">
+        <div class="col-lg-2 border rounded-1 ">
+            <div class="filter-price ">
+                <h5 class="title">Filter Price</h5>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        $100
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                    <label class="form-check-label" for="flexRadioDefault2">
+                        $1000
+                    </label>
+                </div>
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
+                    <label class="form-check-label" for="flexRadioDefault3">
+                        $2000
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault4" checked>
+                    <label class="form-check-label" for="flexRadioDefault4">
+                        $3000
+                    </label>
+                </div>
+            </div>
+            <div class="filter-wateroof ">
+                <h5 class="title">Filter Wateroof</h5>
+                <p>
+                    <a href="">Wateroof 200M</a>
+                </p>
+                <p>
+                    <a href="">Wateroof 200M</a>
+                </p>
+                <p>
+                    <a href="">Wateroof 500M</a>
+                </p>
+            </div>
+            <div class="filter-origin ">
+                <h5 class="title">Filter Wateroof</h5>
+                <p>
+                    <a href="">Japanese</a>
+                </p>
+                <p>
+                    <a href="">Vietnamese</a>
+                </p>
+                <p>
+                    <a href="">Australian</a>
+                </p>
+                <p>
+                    <a href="">Japanese</a>
+                </p>
+                <p>
+                    <a href="">Vietnamese</a>
+                </p>
+                <p>
+                    <a href="">Australian</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-10 ">
+            <div class="row gy-5">
+                @foreach (var gen in Model)
+                {
+                    <div class="col-xxl-3 col-xl-4 col-lg-4 col-md-6">
+                        <div class="p-3 border rounded-3 ">
+                            <div class="card-product position-relative">
+                                <img src="~/Content/img/product/@gen.avatar"
+                                     class="img-thumbnail border-0"
+                                     alt="">
+                                <a href="./detail.html"><h5 class="card-product__name text-center">@gen.product_name</h5></a>
+                                <div class="d-flex justify-content-center">
+                                    <p class="card-product__new">$@(gen.price-(gen.price* gen.discount)/100)</p>
+                                    <p class="card-product__old text-decoration-line-through">$@gen.price</p>
+                                </div>
+                                <div class="card-label">
+                                    <h5 class="card-label__discount position-absolute">@gen.discount%</h5>
+                                </div>
+                                <div class="card-btn position-absolute">
+                                    <button class="card-btn__cart">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                    </button>
+                                    <button class="card-btn__search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5 pb-5">
+    <div aria-label="Page navigation example">
+        <ul class="pagination d-flex m-auto justify-content-center">
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+
+
+

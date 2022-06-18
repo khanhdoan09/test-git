@@ -1,0 +1,259 @@
+﻿@model CuaHangDongHo_API.Models.product
+@using CuaHangDongHo_API.Models
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid bg-light breadcrumb-section">
+    <div class="container pt-2">
+        <div aria-label="breadcrumb ">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Product Detail</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row gy-5">
+        <div class="col-lg-6 col-md-12">
+            <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+                <div class="carousel-indicators d-flex justify-content-evenly">
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"
+                            aria-current="true" aria-label="Slide 1">
+                        <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-03.png" class="d-block"
+                             width="120px" alt="...">
+                    </button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                            aria-label="Slide 2">
+                        <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-03.png" class="d-block"
+                             width="120px" alt="...">
+                    </button>
+                    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                            aria-label="Slide 3">
+                        <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-02.png" class="d-block "
+                             width="120px" alt="...">
+                    </button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000">
+                        <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-03.png"
+                             class="d-flex m-auto" width="400px" alt="...">
+                    </div>
+                    <div class="carousel-item" data-bs-interval="2000">
+                        <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-01.png"
+                             class="d-flex m-auto" width="400px" alt="...">
+
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-02.png"
+                             class="d-flex m-auto " width="400px" alt="...">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 pt-5 detail-main">
+            <h5 class="title detail-name">@Model.product_name</h5>
+            <div class="price d-flex">
+                <p class="price-new">$@(Model.price -((Model.price*Model.discount)/100))</p>
+                <span class="price-old ms-3">$@Model.price</span>
+            </div>
+            <p class="detail-description">
+                @Model.description
+            </p>
+            <div class="quantity">
+                <button class="btn btn-minus">
+                    <i class="fa-solid fa-minus"></i>
+                </button>
+                <input type="text" value="1" readonly>
+                <button class="btn btn-plus">
+                    <i class="fa-solid fa-plus"></i>
+                </button>
+            </div>
+            <button class="btn btn-add mt-3">
+                Add To Cart
+            </button>
+            <div class="detail-more mt-3">
+                <p class="more-id pt-3">ID: <span>@Model.product_id</span></p>
+                <p class="more-categories">Gender: <span>@Model.gender</span></p>
+                <p class="more-brand">Date: <span>@Model.update_date</span></p>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div class="detail container">
+    <div class="row gy-5">
+        <div class="col">
+            <div class="p-5 bg-white rounded shadow mb-5 ">
+                <ul id="myTab" role="tablist"
+                    class="nav nav-tabs nav-pills flex-column flex-sm-row text-center bg-light border-0 rounded-nav">
+                    <li class="nav-item flex-sm-fill">
+                        <a id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
+                           aria-selected="true" class="nav-link border-0 text-uppercase font-weight-bold active">WARRANTY</a>
+                    </li>
+                    <li class="nav-item flex-sm-fill">
+                        <a id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
+                           aria-selected="false" class="nav-link border-0 text-uppercase font-weight-bold">SPECIFICATIONS</a>
+                    </li>
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div id="home" role="tabpanel" aria-labelledby="home-tab"
+                         class="tab-pane fade px-4 py-5 show active">
+                        <p class="description">
+                            @Model.description
+                        </p>
+                        <h5 class="title pt-2 pb-2">Time Warranty: <span>@Model.warranty_period years </span></h5>
+                        <h5 class="title pt-2 pb-2">Origin: <span>@Model.origin</span></h5>
+                        <h5 class="title pt-2 pb-2">Brand: <span>@Model.brand_id</span></h5>
+                        <h5 class="title pt-2 pb-2">Gender: <span>@Model.gender </span></h5>
+                        <h5 class="title pt-2 pb-2">Shipping: <span>Free Shipping</span></h5>
+                    </div>
+                    <div id="profile" role="tabpanel" aria-labelledby="profile-tab" class="tab-pane fade px-4 py-5">
+                        <p class="description">
+                           @Model.description
+                        </p>
+                        <h5 class="title pt-2 pb-2 ">Diameter: <span>@Model.diameter mm</span></h5>
+                        <h5 class="title pt-2 pb-2">Width: <span>@Model.wire_width mm</span></h5>
+                        <h5 class="title pt-2 pb-2">Material: <span>@Model.material</span></h5>
+                        <h5 class="title pt-2 pb-2">Strap: <span>@Model.strap</span></h5>
+                        <h5 class="title pt-2 pb-2">Water Proof: <span>@Model.waterproof</span></h5>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="related container">
+    <h5 class="title">Related Product</h5>
+    <div class="row gy-5">
+        <div class="col-lg-3 col-md-4 ">
+            <div class="p-3 border rounded-3 ">
+                <div class="card-product position-relative">
+                    <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-01.png"
+                         class="img-thumbnail border-0"
+                         alt="">
+                    <a href="">
+                        <h5 class="card-product__name text-center">
+                            Simple Product e Product e Product e Product e
+                            Product e Product e Product 1
+                        </h5>
+                    </a>
+                    <div class="d-flex justify-content-center">
+                        <p class="card-product__new">$42.00</p>
+                        <p class="card-product__old text-decoration-line-through">$49.00</p>
+                    </div>
+                    <div class="card-label">
+                        <h5 class="card-label__discount position-absolute">30%</h5>
+                    </div>
+                    <div class="card-btn position-absolute">
+                        <button class="card-btn__cart">
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                        <button class="card-btn__search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 ">
+            <div class="p-3 border rounded-3 ">
+                <div class="card-product position-relative">
+                    <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-01.png"
+                         class="img-thumbnail border-0"
+                         alt="">
+                    <a href=""><h5 class="card-product__name text-center">Simple Product 1</h5></a>
+                    <div class="d-flex justify-content-center">
+                        <p class="card-product__new">$42.00</p>
+                        <p class="card-product__old text-decoration-line-through">$49.00</p>
+                    </div>
+                    <div class="card-label">
+                        <h5 class="card-label__discount position-absolute">30%</h5>
+                    </div>
+                    <div class="card-btn position-absolute">
+                        <button class="card-btn__cart">
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                        <button class="card-btn__search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 ">
+            <div class="p-3 border rounded-3 ">
+                <div class="card-product position-relative">
+                    <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-01.png"
+                         class="img-thumbnail border-0"
+                         alt="">
+                    <a href=""><h5 class="card-product__name text-center">Simple Product 1</h5></a>
+                    <div class="d-flex justify-content-center">
+                        <p class="card-product__new">$42.00</p>
+                        <p class="card-product__old text-decoration-line-through">$49.00</p>
+                    </div>
+                    <div class="card-label">
+                        <h5 class="card-label__discount position-absolute">30%</h5>
+                    </div>
+                    <div class="card-btn position-absolute">
+                        <button class="card-btn__cart">
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                        <button class="card-btn__search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 ">
+            <div class="p-3 border rounded-3 ">
+                <div class="card-product position-relative">
+                    <img src="https://htmldemo.net/ruiz/ruiz/assets/images/product/product-01.png"
+                         class="img-thumbnail border-0"
+                         alt="">
+                    <a href=""><h5 class="card-product__name text-center">Simple Product 1</h5></a>
+                    <div class="d-flex justify-content-center">
+                        <p class="card-product__new">$42.00</p>
+                        <p class="card-product__old text-decoration-line-through">$49.00</p>
+                    </div>
+                    <div class="card-label">
+                        <h5 class="card-label__discount position-absolute">30%</h5>
+                    </div>
+                    <div class="card-btn position-absolute">
+                        <button class="card-btn__cart">
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </button>
+                        <button class="card-btn__search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+

@@ -1,0 +1,609 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: "Rubik", sans-serif;
+}
+
+input:focus {
+  border: 1px solid #c89979 !important;
+}
+
+.size img {
+  width: 100%;
+  height: 800px;
+  object-fit: cover;
+  object-align: center;
+  object-size: cover;
+}
+
+.title {
+  font-weight: 700;
+}
+.title p {
+  color: #c89979;
+}
+.title span {
+  font-weight: normal;
+}
+.title i {
+  background-color: #c89979;
+  border-radius: 50%;
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  text-align: center;
+  padding-top: 13px;
+}
+
+i {
+  font-size: 18px;
+}
+
+header {
+  background-color: #333;
+  height: 100px;
+  border-bottom: 1px solid #fff;
+}
+
+.btn {
+  color: #fff;
+  background-color: #c89979;
+}
+.btn:hover {
+  color: #fff !important;
+  background-color: #333 !important;
+}
+.btn-user {
+  background-color: transparent;
+  color: #fff !important;
+  outline: none;
+  border: none;
+  padding: 0 20px;
+}
+.btn-cart {
+  background-color: transparent;
+  color: #fff !important;
+  outline: none;
+  border: none;
+}
+.btn-cart a {
+  color: #fff !important;
+}
+.btn-bar {
+  margin-top: 7px;
+}
+.btn-subcribe {
+  outline: none;
+  border: none;
+}
+.btn-login, .btn-now {
+  margin-top: 10px;
+  border-radius: 0px;
+  width: 150px;
+  text-transform: uppercase;
+}
+.btn-register {
+  margin-top: 10px;
+  border-radius: 0px;
+  width: 150px;
+  text-transform: uppercase;
+}
+.btn-forgotpassword {
+  margin-top: 10px;
+}
+.btn-updateCart {
+  background-color: #333 !important;
+}
+.btn-updateCart:hover {
+  background-color: #c89979 !important;
+}
+.btn-continue {
+  background-color: #333 !important;
+}
+.btn-continue:hover {
+  background-color: #c89979 !important;
+}
+.btn-checkout {
+  background-color: #333 !important;
+  font-weight: 700;
+}
+.btn-checkout:hover {
+  background-color: #c89979 !important;
+}
+.btn-place {
+  width: 100%;
+  border-radius: 0px;
+}
+.btn-place:hover {
+  background-color: #333 !important;
+}
+.btn-send {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.btn-add {
+  padding: 8px 35px;
+}
+.btn-add:hover {
+  background-color: #333 !important;
+  color: #fff !important;
+  transition: all 0.3s linear;
+}
+.btn-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  color: white;
+  cursor: pointer;
+  font-size: 18px;
+  padding: 10px 17px;
+}
+
+.form-search {
+  width: 350px;
+  border: 1px solid #333;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+}
+.form-searchMobile {
+  width: 88%;
+  border: 1px solid #333;
+  border-radius: 5px;
+  outline: none;
+  padding: 0 10px;
+}
+.form-searchMobile:focus {
+  border: 1px solid #c89979 !important;
+}
+.form-subcribe {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  padding: 10px;
+  width: 350px;
+  background-color: #f1f1f1;
+}
+
+nav {
+  background-color: #333;
+  height: 53px;
+}
+
+.nav-item {
+  list-style: none;
+  padding: 5px 20px;
+}
+.nav-item button {
+  color: #333 !important;
+  background-color: transparent !important;
+}
+.nav-item button:active {
+  color: #c89979 !important;
+}
+.nav-item button:hover {
+  color: #c89979 !important;
+}
+.nav-link.active {
+  color: #c89979;
+  border-radius: 5px;
+  border: 1px solid #c89979;
+}
+.nav-link {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.nav-link:hover {
+  color: #c89979;
+}
+
+.slider-img img {
+  width: 1300px;
+}
+
+.best-deal {
+  padding: 20px 0;
+}
+.best-seller {
+  padding: 20px 0;
+}
+
+.card-product__name {
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+.card-product a {
+  text-decoration: none;
+  color: #525252;
+}
+.card-product a:hover {
+  color: #c89979;
+  transition: all 0.3s ease;
+}
+.card-product__new {
+  padding: 0 5px;
+  color: #c89979;
+  font-weight: 700;
+}
+.card-product__old {
+  padding: 0 5px;
+}
+.card-btn {
+  top: 45%;
+  left: 35%;
+  display: none;
+}
+.card-btn__cart {
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: #c89979;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+}
+.card-btn__search {
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: #c89979;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+}
+.card-label__discount {
+  top: 0;
+  left: 0;
+  background-color: #e81a1a;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 7px 15px;
+}
+
+footer {
+  background-color: #333333;
+  color: #fff;
+}
+
+.breadcrumb-section {
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.breadcrumb-item {
+  color: #c89979 !important;
+  font-weight: 700;
+}
+.breadcrumb-item a {
+  text-decoration: none;
+  color: #6c75a5 !important;
+}
+.breadcrumb-item a:hover {
+  color: #c89979 !important;
+  transition: all 0.3s linear;
+}
+
+.filter-price, .filter-wateroof, .filter-origin {
+  padding: 25px;
+  border-bottom: 1px solid #333;
+}
+.filter-price a, .filter-wateroof a, .filter-origin a {
+  text-decoration: none;
+  color: #525252;
+}
+
+.login, .register, .forgotpassword {
+  max-width: 600px;
+  padding: 50px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 0px;
+}
+.login form input[type=text], .login form input[type=password], .register form input[type=text], .register form input[type=password], .forgotpassword form input[type=text], .forgotpassword form input[type=password] {
+  width: 400px;
+  padding: 7px 15px;
+  margin: 10px 0;
+  outline: none;
+  border: 1px solid #bdbdbd;
+  border-radius: 0px;
+}
+
+.option a {
+  text-decoration: none;
+  color: #525252;
+}
+.option a:hover {
+  color: #c89979 !important;
+}
+
+.your-order {
+  padding: 20px 50px;
+}
+
+.bill-info input {
+  margin: 10px 0;
+  padding: 5px 8px;
+  outline: none;
+  border: 1px solid #333;
+}
+.bill-info input:focus {
+  border: 1px solid #c89979 !important;
+}
+
+.offcanvas-body ul {
+  padding-left: 0;
+}
+.offcanvas-body .nav-item {
+  width: 100%;
+}
+.offcanvas-body .nav-item:hover {
+  background-color: #333333;
+}
+.offcanvas-body .nav-link {
+  color: #c89979 !important;
+}
+
+.brand-list a {
+  width: 120%;
+  display: block;
+  text-decoration: none;
+  color: #c89979;
+  font-weight: 700;
+  padding: 10px 60px;
+  margin-left: -30px;
+}
+.brand-list a:hover {
+  color: #f1f1f1;
+  background-color: #c89979;
+}
+
+.submenu {
+  width: 200px;
+  background-color: #fff;
+  top: 54px;
+  left: 45px;
+  z-index: 99;
+  list-style: none;
+  visibility: hidden;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+.submenu:hover {
+  visibility: visible;
+  background-color: #fff;
+}
+.submenu-item {
+  display: block;
+  margin-left: -32px;
+}
+.submenu a {
+  display: block;
+  text-decoration: none;
+  color: #c89979;
+  font-weight: 700;
+  padding: 10px 32px;
+}
+.submenu a:hover {
+  color: #fff;
+  background-color: #c89979;
+}
+
+.subuser {
+  width: 200px;
+  background-color: #fff;
+  top: 33px;
+  left: -115px;
+  z-index: 2;
+  list-style: none;
+  visibility: hidden;
+}
+.subuser:hover {
+  visibility: visible;
+}
+.subuser-item {
+  display: block;
+  margin-left: -32px;
+}
+.subuser a {
+  display: block;
+  text-decoration: none;
+  color: #c89979;
+  font-weight: 700;
+  padding: 10px 32px;
+}
+.subuser a:hover {
+  color: #fff;
+  background-color: #c89979;
+}
+
+.menu .nav-link.active {
+  color: #c89979;
+}
+
+.brand:hover .submenu, .user:hover .subuser {
+  visibility: visible;
+}
+
+.user:before {
+  position: absolute;
+  content: "";
+  width: 103px;
+  height: 28px;
+  background-color: transparent;
+  top: 18px;
+  left: -47px;
+  z-index: 1;
+}
+
+.brand:before {
+  position: absolute;
+  content: "";
+  width: 122px;
+  height: 39px;
+  background-color: transparent;
+  top: 31px;
+  left: 14px;
+  z-index: 1;
+}
+
+.contact-form input {
+  margin: 10px 0;
+  padding: 10px 8px;
+  border: 1px solid #dcd5d5;
+  outline: none;
+  max-width: 550px;
+}
+.contact-form input:focus {
+  border: 1px solid #c89979;
+}
+.contact-form textarea {
+  margin: 10px 0;
+  padding: 10px 8px;
+  border: 1px solid #dcd5d5;
+  outline: none;
+  max-width: 550px;
+  max-height: 100px;
+}
+.contact-form textarea:focus {
+  border: 1px solid #c89979;
+}
+
+.contact-info {
+  padding: 20px 50px;
+}
+
+.nav-pills .nav-link {
+  background-color: transparent;
+  color: #c89979;
+}
+
+.nav-pills .nav-link.active {
+  background-color: #333;
+  color: #fff;
+}
+
+.detail {
+  margin-top: 150px;
+}
+.detail-main {
+  margin-top: 100px;
+}
+.detail-name {
+  font-weight: 700;
+  font-size: 30px;
+}
+.detail-description {
+  display: block;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+}
+.detail-more {
+  border-top: 1px solid #333;
+}
+
+.price {
+  font-size: 25px;
+}
+.price-old {
+  text-decoration: line-through;
+  color: #b9b4b4;
+}
+.price-new {
+  color: #c89979;
+  font-weight: 700;
+}
+
+.px-250 {
+  margin-left: 250px;
+  margin-right: 250px;
+  padding: 20px 0;
+  border-bottom: 1px solid #333;
+}
+
+.quantity input {
+  width: 50px;
+  padding: 10px;
+  outline-color: #c89979;
+  border: 1px solid #d2cbcb;
+  text-align: center;
+  margin: 0 5px;
+}
+
+footer {
+  background: #212529;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover, a:focus {
+  text-decoration: none;
+  color: #c89979;
+}
+
+@keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeInUp {
+  from {
+    transform: translate3d(0, 40px, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+}
+
+.animatedFadeInUp {
+  opacity: 0;
+}
+
+.fadeInUp {
+  opacity: 0;
+  animation-name: fadeInUp;
+  -webkit-animation-name: fadeInUp;
+}
+
+#btnPassword1, #btnPassword2 {
+  bottom: 15px;
+  right: 10px;
+  border: none;
+  background-color: transparent;
+}
+#btnPassword1 span, #btnPassword2 span {
+  border: none;
+  color: #c89979;
+}
+
+/*# sourceMappingURL=style.css.map */

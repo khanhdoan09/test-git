@@ -1,0 +1,905 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{872F01F1-6906-43CA-93BB-7F553A202AC6}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CuaHangDongHo_API</RootNamespace>
+    <AssemblyName>CuaHangDongHo_API</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44380</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.7\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
+    <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
+    <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageAreaRegistration.cs" />
+    <Compile Include="Areas\HelpPage\HelpPageConfigurationExtensions.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\CollectionModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ComplexTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\DictionaryModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\EnumValueDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\IModelDocumentationProvider.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\KeyValuePairModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelDescriptionGenerator.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameAttribute.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ModelNameHelper.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterAnnotation.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\ParameterDescription.cs" />
+    <Compile Include="Areas\HelpPage\ModelDescriptions\SimpleTypeModelDescription.cs" />
+    <Compile Include="Areas\HelpPage\Models\HelpPageApiModel.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\HelpPageSampleKey.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ImageSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\InvalidSample.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\ObjectGenerator.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
+    <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
+    <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\Api\HomeController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\brand.cs" />
+    <Compile Include="Models\contact.cs" />
+    <Compile Include="Models\DBWatch.cs" />
+    <Compile Include="Models\HomeModel.cs" />
+    <Compile Include="Models\image_details.cs" />
+    <Compile Include="Models\notify.cs" />
+    <Compile Include="Models\order.cs" />
+    <Compile Include="Models\order_detail.cs" />
+    <Compile Include="Models\product.cs" />
+    <Compile Include="Models\user.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\HelpPage\HelpPage.css" />
+    <Content Include="Content\img\product\cckt01_1.jpg" />
+    <Content Include="Content\img\product\cckt01_2.jpg" />
+    <Content Include="Content\img\product\cckt01_3.jpg" />
+    <Content Include="Content\img\product\cckt01_4.jpg" />
+    <Content Include="Content\img\product\cckt01_5.jpg" />
+    <Content Include="Content\img\product\cckt02_1.jpg" />
+    <Content Include="Content\img\product\cckt02_2.jpg" />
+    <Content Include="Content\img\product\cckt02_3.jpg" />
+    <Content Include="Content\img\product\cckt02_4.jpg" />
+    <Content Include="Content\img\product\cckt02_5.jpg" />
+    <Content Include="Content\img\product\cckt03_1.jpg" />
+    <Content Include="Content\img\product\cckt03_2.jpg" />
+    <Content Include="Content\img\product\cckt03_3.jpg" />
+    <Content Include="Content\img\product\cckt03_4.jpg" />
+    <Content Include="Content\img\product\cckt03_5.jpg" />
+    <Content Include="Content\img\product\cckt04_1.jpg" />
+    <Content Include="Content\img\product\cckt04_2.jpg" />
+    <Content Include="Content\img\product\cckt04_3.jpg" />
+    <Content Include="Content\img\product\cckt04_4.jpg" />
+    <Content Include="Content\img\product\cckt04_5.jpg" />
+    <Content Include="Content\img\product\cckt05_1.jpg" />
+    <Content Include="Content\img\product\cckt05_2.jpg" />
+    <Content Include="Content\img\product\cckt05_3.jpg" />
+    <Content Include="Content\img\product\cckt05_4.jpg" />
+    <Content Include="Content\img\product\cckt05_5.jpg" />
+    <Content Include="Content\img\product\cckt06_1.jpg" />
+    <Content Include="Content\img\product\cckt06_2.jpg" />
+    <Content Include="Content\img\product\cckt06_3.jpg" />
+    <Content Include="Content\img\product\cckt06_4.jpg" />
+    <Content Include="Content\img\product\cckt06_5.jpg" />
+    <Content Include="Content\img\product\cckt07_1.jpg" />
+    <Content Include="Content\img\product\cckt07_2.jpg" />
+    <Content Include="Content\img\product\cckt07_3.jpg" />
+    <Content Include="Content\img\product\cckt07_4.jpg" />
+    <Content Include="Content\img\product\cckt07_5.jpg" />
+    <Content Include="Content\img\product\cckt08_1.jpg" />
+    <Content Include="Content\img\product\cckt08_2.jpg" />
+    <Content Include="Content\img\product\cckt08_3.jpg" />
+    <Content Include="Content\img\product\cckt08_4.jpg" />
+    <Content Include="Content\img\product\cckt08_5.jpg" />
+    <Content Include="Content\img\product\cckt09_1.jpg" />
+    <Content Include="Content\img\product\cckt09_2.jpg" />
+    <Content Include="Content\img\product\cckt09_3.jpg" />
+    <Content Include="Content\img\product\cckt09_4.jpg" />
+    <Content Include="Content\img\product\cckt09_5.jpg" />
+    <Content Include="Content\img\product\cckt100_1.jpg" />
+    <Content Include="Content\img\product\cckt100_2.jpg" />
+    <Content Include="Content\img\product\cckt100_3.jpg" />
+    <Content Include="Content\img\product\cckt100_4.jpg" />
+    <Content Include="Content\img\product\cckt100_5.jpg" />
+    <Content Include="Content\img\product\cckt101_1.jpg" />
+    <Content Include="Content\img\product\cckt101_2.jpg" />
+    <Content Include="Content\img\product\cckt101_3.jpg" />
+    <Content Include="Content\img\product\cckt101_4.jpg" />
+    <Content Include="Content\img\product\cckt101_5.jpg" />
+    <Content Include="Content\img\product\cckt102_1.jpg" />
+    <Content Include="Content\img\product\cckt102_2.jpg" />
+    <Content Include="Content\img\product\cckt102_3.jpg" />
+    <Content Include="Content\img\product\cckt102_4.jpg" />
+    <Content Include="Content\img\product\cckt102_5.jpg" />
+    <Content Include="Content\img\product\cckt103_1.jpg" />
+    <Content Include="Content\img\product\cckt103_2.jpg" />
+    <Content Include="Content\img\product\cckt103_3.jpg" />
+    <Content Include="Content\img\product\cckt103_4.jpg" />
+    <Content Include="Content\img\product\cckt103_5.jpg" />
+    <Content Include="Content\img\product\cckt104_1.jpg" />
+    <Content Include="Content\img\product\cckt104_2.jpg" />
+    <Content Include="Content\img\product\cckt104_3.jpg" />
+    <Content Include="Content\img\product\cckt104_4.jpg" />
+    <Content Include="Content\img\product\cckt104_5.jpg" />
+    <Content Include="Content\img\product\cckt105_1.jpg" />
+    <Content Include="Content\img\product\cckt105_2.jpg" />
+    <Content Include="Content\img\product\cckt105_3.jpg" />
+    <Content Include="Content\img\product\cckt105_4.jpg" />
+    <Content Include="Content\img\product\cckt105_5.jpg" />
+    <Content Include="Content\img\product\cckt106_1.jpg" />
+    <Content Include="Content\img\product\cckt106_2.jpg" />
+    <Content Include="Content\img\product\cckt106_3.jpg" />
+    <Content Include="Content\img\product\cckt106_4.jpg" />
+    <Content Include="Content\img\product\cckt106_5.jpg" />
+    <Content Include="Content\img\product\cckt107_1.jpg" />
+    <Content Include="Content\img\product\cckt107_2.jpg" />
+    <Content Include="Content\img\product\cckt107_3.jpg" />
+    <Content Include="Content\img\product\cckt107_4.jpg" />
+    <Content Include="Content\img\product\cckt107_5.jpg" />
+    <Content Include="Content\img\product\cckt108_1.jpg" />
+    <Content Include="Content\img\product\cckt108_2.jpg" />
+    <Content Include="Content\img\product\cckt108_3.jpg" />
+    <Content Include="Content\img\product\cckt108_4.jpg" />
+    <Content Include="Content\img\product\cckt108_5.jpg" />
+    <Content Include="Content\img\product\cckt109_1.jpg" />
+    <Content Include="Content\img\product\cckt109_2.jpg" />
+    <Content Include="Content\img\product\cckt109_3.jpg" />
+    <Content Include="Content\img\product\cckt109_4.jpg" />
+    <Content Include="Content\img\product\cckt109_5.jpg" />
+    <Content Include="Content\img\product\cckt10_1.jpg" />
+    <Content Include="Content\img\product\cckt10_2.jpg" />
+    <Content Include="Content\img\product\cckt10_3.jpg" />
+    <Content Include="Content\img\product\cckt10_4.jpg" />
+    <Content Include="Content\img\product\cckt10_5.jpg" />
+    <Content Include="Content\img\product\cckt110_1.jpg" />
+    <Content Include="Content\img\product\cckt110_2.jpg" />
+    <Content Include="Content\img\product\cckt110_3.jpg" />
+    <Content Include="Content\img\product\cckt110_4.jpg" />
+    <Content Include="Content\img\product\cckt110_5.jpg" />
+    <Content Include="Content\img\product\cckt111_1.jpg" />
+    <Content Include="Content\img\product\cckt111_2.jpg" />
+    <Content Include="Content\img\product\cckt111_3.jpg" />
+    <Content Include="Content\img\product\cckt111_4.jpg" />
+    <Content Include="Content\img\product\cckt111_5.jpg" />
+    <Content Include="Content\img\product\cckt112_1.jpg" />
+    <Content Include="Content\img\product\cckt112_2.jpg" />
+    <Content Include="Content\img\product\cckt112_3.jpg" />
+    <Content Include="Content\img\product\cckt112_4.jpg" />
+    <Content Include="Content\img\product\cckt112_5.jpg" />
+    <Content Include="Content\img\product\cckt113_1.jpg" />
+    <Content Include="Content\img\product\cckt113_2.jpg" />
+    <Content Include="Content\img\product\cckt113_3.jpg" />
+    <Content Include="Content\img\product\cckt113_4.jpg" />
+    <Content Include="Content\img\product\cckt113_5.jpg" />
+    <Content Include="Content\img\product\cckt114_1.jpg" />
+    <Content Include="Content\img\product\cckt114_2.jpg" />
+    <Content Include="Content\img\product\cckt114_3.jpg" />
+    <Content Include="Content\img\product\cckt114_4.jpg" />
+    <Content Include="Content\img\product\cckt114_5.jpg" />
+    <Content Include="Content\img\product\cckt115_1.jpg" />
+    <Content Include="Content\img\product\cckt115_2.jpg" />
+    <Content Include="Content\img\product\cckt115_3.jpg" />
+    <Content Include="Content\img\product\cckt115_4.jpg" />
+    <Content Include="Content\img\product\cckt115_5.jpg" />
+    <Content Include="Content\img\product\cckt116_1.jpg" />
+    <Content Include="Content\img\product\cckt116_2.jpg" />
+    <Content Include="Content\img\product\cckt116_3.jpg" />
+    <Content Include="Content\img\product\cckt116_4.jpg" />
+    <Content Include="Content\img\product\cckt116_5.jpg" />
+    <Content Include="Content\img\product\cckt117_1.jpg" />
+    <Content Include="Content\img\product\cckt117_2.jpg" />
+    <Content Include="Content\img\product\cckt117_3.jpg" />
+    <Content Include="Content\img\product\cckt117_4.jpg" />
+    <Content Include="Content\img\product\cckt117_5.jpg" />
+    <Content Include="Content\img\product\cckt118_1.jpg" />
+    <Content Include="Content\img\product\cckt118_2.jpg" />
+    <Content Include="Content\img\product\cckt118_3.jpg" />
+    <Content Include="Content\img\product\cckt118_4.jpg" />
+    <Content Include="Content\img\product\cckt118_5.jpg" />
+    <Content Include="Content\img\product\cckt119_1.jpg" />
+    <Content Include="Content\img\product\cckt119_2.jpg" />
+    <Content Include="Content\img\product\cckt119_3.jpg" />
+    <Content Include="Content\img\product\cckt119_4.jpg" />
+    <Content Include="Content\img\product\cckt119_5.jpg" />
+    <Content Include="Content\img\product\cckt11_1.jpg" />
+    <Content Include="Content\img\product\cckt11_2.jpg" />
+    <Content Include="Content\img\product\cckt11_3.jpg" />
+    <Content Include="Content\img\product\cckt11_4.jpg" />
+    <Content Include="Content\img\product\cckt11_5.jpg" />
+    <Content Include="Content\img\product\cckt120_1.jpg" />
+    <Content Include="Content\img\product\cckt120_2.jpg" />
+    <Content Include="Content\img\product\cckt120_3.jpg" />
+    <Content Include="Content\img\product\cckt120_4.jpg" />
+    <Content Include="Content\img\product\cckt120_5.jpg" />
+    <Content Include="Content\img\product\cckt121_1.jpg" />
+    <Content Include="Content\img\product\cckt121_2.jpg" />
+    <Content Include="Content\img\product\cckt121_3.jpg" />
+    <Content Include="Content\img\product\cckt121_4.jpg" />
+    <Content Include="Content\img\product\cckt121_5.jpg" />
+    <Content Include="Content\img\product\cckt12_1.jpg" />
+    <Content Include="Content\img\product\cckt12_2.jpg" />
+    <Content Include="Content\img\product\cckt12_3.jpg" />
+    <Content Include="Content\img\product\cckt12_4.jpg" />
+    <Content Include="Content\img\product\cckt12_5.jpg" />
+    <Content Include="Content\img\product\cckt13_1.jpg" />
+    <Content Include="Content\img\product\cckt13_2.jpg" />
+    <Content Include="Content\img\product\cckt13_3.jpg" />
+    <Content Include="Content\img\product\cckt13_4.jpg" />
+    <Content Include="Content\img\product\cckt13_5.jpg" />
+    <Content Include="Content\img\product\cckt14_1.jpg" />
+    <Content Include="Content\img\product\cckt14_2.jpg" />
+    <Content Include="Content\img\product\cckt14_3.jpg" />
+    <Content Include="Content\img\product\cckt14_4.jpg" />
+    <Content Include="Content\img\product\cckt14_5.jpg" />
+    <Content Include="Content\img\product\cckt15_1.jpg" />
+    <Content Include="Content\img\product\cckt15_2.jpg" />
+    <Content Include="Content\img\product\cckt15_3.jpg" />
+    <Content Include="Content\img\product\cckt15_4.jpg" />
+    <Content Include="Content\img\product\cckt15_5.jpg" />
+    <Content Include="Content\img\product\CCKT162_1.jpg" />
+    <Content Include="Content\img\product\CCKT162_2.jpg" />
+    <Content Include="Content\img\product\CCKT162_3.jpg" />
+    <Content Include="Content\img\product\CCKT162_4.jpg" />
+    <Content Include="Content\img\product\CCKT162_5.jpg" />
+    <Content Include="Content\img\product\cckt18_1.jpg" />
+    <Content Include="Content\img\product\cckt18_2.jpg" />
+    <Content Include="Content\img\product\cckt18_3.jpg" />
+    <Content Include="Content\img\product\cckt18_4.jpg" />
+    <Content Include="Content\img\product\cckt19_1.jpg" />
+    <Content Include="Content\img\product\cckt19_2.jpg" />
+    <Content Include="Content\img\product\cckt19_3.jpg" />
+    <Content Include="Content\img\product\cckt19_4.jpg" />
+    <Content Include="Content\img\product\cckt19_5.jpg" />
+    <Content Include="Content\img\product\cckt20_1.jpg" />
+    <Content Include="Content\img\product\cckt20_2.jpg" />
+    <Content Include="Content\img\product\cckt20_3.jpg" />
+    <Content Include="Content\img\product\cckt20_4.jpg" />
+    <Content Include="Content\img\product\cckt20_5.jpg" />
+    <Content Include="Content\img\product\cckt21_1.jpg" />
+    <Content Include="Content\img\product\cckt21_2.jpg" />
+    <Content Include="Content\img\product\cckt21_3.jpg" />
+    <Content Include="Content\img\product\cckt21_4.jpg" />
+    <Content Include="Content\img\product\cckt21_5.jpg" />
+    <Content Include="Content\img\product\cckt22_1.jpg" />
+    <Content Include="Content\img\product\cckt22_2.jpg" />
+    <Content Include="Content\img\product\cckt22_3.jpg" />
+    <Content Include="Content\img\product\cckt22_4.jpg" />
+    <Content Include="Content\img\product\cckt22_5.jpg" />
+    <Content Include="Content\img\product\cckt23_1.jpg" />
+    <Content Include="Content\img\product\cckt23_2.jpg" />
+    <Content Include="Content\img\product\cckt23_3.jpg" />
+    <Content Include="Content\img\product\cckt23_4.jpg" />
+    <Content Include="Content\img\product\cckt23_5.jpg" />
+    <Content Include="Content\img\product\cckt24_1.jpg" />
+    <Content Include="Content\img\product\cckt24_2.jpg" />
+    <Content Include="Content\img\product\cckt24_3.jpg" />
+    <Content Include="Content\img\product\cckt24_4.jpg" />
+    <Content Include="Content\img\product\cckt24_5.jpg" />
+    <Content Include="Content\img\product\cckt25_1.jpg" />
+    <Content Include="Content\img\product\cckt25_2.jpg" />
+    <Content Include="Content\img\product\cckt25_3.jpg" />
+    <Content Include="Content\img\product\cckt25_4.jpg" />
+    <Content Include="Content\img\product\cckt25_5.jpg" />
+    <Content Include="Content\img\product\cckt26_1.jpg" />
+    <Content Include="Content\img\product\cckt26_2.jpg" />
+    <Content Include="Content\img\product\cckt26_3.jpg" />
+    <Content Include="Content\img\product\cckt26_4.jpg" />
+    <Content Include="Content\img\product\cckt26_5.jpg" />
+    <Content Include="Content\img\product\cckt27_1.jpg" />
+    <Content Include="Content\img\product\cckt27_2.jpg" />
+    <Content Include="Content\img\product\cckt27_3.jpg" />
+    <Content Include="Content\img\product\cckt27_4.jpg" />
+    <Content Include="Content\img\product\cckt27_5.jpg" />
+    <Content Include="Content\img\product\cckt28_1.jpg" />
+    <Content Include="Content\img\product\cckt28_2.jpg" />
+    <Content Include="Content\img\product\cckt28_3.jpg" />
+    <Content Include="Content\img\product\cckt28_4.jpg" />
+    <Content Include="Content\img\product\cckt28_5.jpg" />
+    <Content Include="Content\img\product\cckt29_1.jpg" />
+    <Content Include="Content\img\product\cckt29_2.jpg" />
+    <Content Include="Content\img\product\cckt29_3.jpg" />
+    <Content Include="Content\img\product\cckt29_4.jpg" />
+    <Content Include="Content\img\product\cckt29_5.jpg" />
+    <Content Include="Content\img\product\cckt30_1.jpg" />
+    <Content Include="Content\img\product\cckt30_2.jpg" />
+    <Content Include="Content\img\product\cckt30_3.jpg" />
+    <Content Include="Content\img\product\cckt30_4.jpg" />
+    <Content Include="Content\img\product\cckt30_5.jpg" />
+    <Content Include="Content\img\product\cckt31_1.jpg" />
+    <Content Include="Content\img\product\cckt31_2.jpg" />
+    <Content Include="Content\img\product\cckt31_3.jpg" />
+    <Content Include="Content\img\product\cckt31_4.jpg" />
+    <Content Include="Content\img\product\cckt31_5.jpg" />
+    <Content Include="Content\img\product\cckt32_1.jpg" />
+    <Content Include="Content\img\product\cckt32_2.jpg" />
+    <Content Include="Content\img\product\cckt32_3.jpg" />
+    <Content Include="Content\img\product\cckt32_4.jpg" />
+    <Content Include="Content\img\product\cckt32_5.jpg" />
+    <Content Include="Content\img\product\cckt33_1.jpg" />
+    <Content Include="Content\img\product\cckt33_2.jpg" />
+    <Content Include="Content\img\product\cckt33_3.jpg" />
+    <Content Include="Content\img\product\cckt33_4.jpg" />
+    <Content Include="Content\img\product\cckt33_5.jpg" />
+    <Content Include="Content\img\product\cckt34_1.jpg" />
+    <Content Include="Content\img\product\cckt34_2.jpg" />
+    <Content Include="Content\img\product\cckt34_3.jpg" />
+    <Content Include="Content\img\product\cckt34_4.jpg" />
+    <Content Include="Content\img\product\cckt34_5.jpg" />
+    <Content Include="Content\img\product\cckt35_1.jpg" />
+    <Content Include="Content\img\product\cckt35_2.jpg" />
+    <Content Include="Content\img\product\cckt35_3.jpg" />
+    <Content Include="Content\img\product\cckt35_4.jpg" />
+    <Content Include="Content\img\product\cckt35_5.jpg" />
+    <Content Include="Content\img\product\cckt36_1.jpg" />
+    <Content Include="Content\img\product\cckt36_2.jpg" />
+    <Content Include="Content\img\product\cckt36_3.jpg" />
+    <Content Include="Content\img\product\cckt36_4.jpg" />
+    <Content Include="Content\img\product\cckt36_5.jpg" />
+    <Content Include="Content\img\product\cckt37_1.jpg" />
+    <Content Include="Content\img\product\cckt37_2.jpg" />
+    <Content Include="Content\img\product\cckt37_3.jpg" />
+    <Content Include="Content\img\product\cckt37_4.jpg" />
+    <Content Include="Content\img\product\cckt37_5.jpg" />
+    <Content Include="Content\img\product\cckt38_1.jpg" />
+    <Content Include="Content\img\product\cckt38_2.jpg" />
+    <Content Include="Content\img\product\cckt38_3.jpg" />
+    <Content Include="Content\img\product\cckt38_4.jpg" />
+    <Content Include="Content\img\product\cckt38_5.jpg" />
+    <Content Include="Content\img\product\cckt39_1.jpg" />
+    <Content Include="Content\img\product\cckt39_2.jpg" />
+    <Content Include="Content\img\product\cckt39_3.jpg" />
+    <Content Include="Content\img\product\cckt39_4.jpg" />
+    <Content Include="Content\img\product\cckt39_5.jpg" />
+    <Content Include="Content\img\product\cckt40_1.jpg" />
+    <Content Include="Content\img\product\cckt40_2.jpg" />
+    <Content Include="Content\img\product\cckt40_3.jpg" />
+    <Content Include="Content\img\product\cckt40_4.jpg" />
+    <Content Include="Content\img\product\cckt40_5.jpg" />
+    <Content Include="Content\img\product\cckt41_1.jpg" />
+    <Content Include="Content\img\product\cckt41_2.jpg" />
+    <Content Include="Content\img\product\cckt41_3.jpg" />
+    <Content Include="Content\img\product\cckt41_4.jpg" />
+    <Content Include="Content\img\product\cckt41_5.jpg" />
+    <Content Include="Content\img\product\cckt42_1.jpg" />
+    <Content Include="Content\img\product\cckt42_2.jpg" />
+    <Content Include="Content\img\product\cckt42_3.jpg" />
+    <Content Include="Content\img\product\cckt42_4.jpg" />
+    <Content Include="Content\img\product\cckt42_5.jpg" />
+    <Content Include="Content\img\product\cckt43_1.jpg" />
+    <Content Include="Content\img\product\cckt43_2.jpg" />
+    <Content Include="Content\img\product\cckt43_3.jpg" />
+    <Content Include="Content\img\product\cckt43_4.jpg" />
+    <Content Include="Content\img\product\cckt43_5.jpg" />
+    <Content Include="Content\img\product\cckt44_1.jpg" />
+    <Content Include="Content\img\product\cckt44_2.jpg" />
+    <Content Include="Content\img\product\cckt44_3.jpg" />
+    <Content Include="Content\img\product\cckt44_4.jpg" />
+    <Content Include="Content\img\product\cckt44_5.jpg" />
+    <Content Include="Content\img\product\cckt45_1.jpg" />
+    <Content Include="Content\img\product\cckt45_2.jpg" />
+    <Content Include="Content\img\product\cckt45_3.jpg" />
+    <Content Include="Content\img\product\cckt45_4.jpg" />
+    <Content Include="Content\img\product\cckt45_5.jpg" />
+    <Content Include="Content\img\product\cckt46_1.jpg" />
+    <Content Include="Content\img\product\cckt46_2.jpg" />
+    <Content Include="Content\img\product\cckt46_3.jpg" />
+    <Content Include="Content\img\product\cckt46_4.jpg" />
+    <Content Include="Content\img\product\cckt46_5.jpg" />
+    <Content Include="Content\img\product\cckt47_1.jpg" />
+    <Content Include="Content\img\product\cckt47_2.jpg" />
+    <Content Include="Content\img\product\cckt47_3.jpg" />
+    <Content Include="Content\img\product\cckt47_4.jpg" />
+    <Content Include="Content\img\product\cckt47_5.jpg" />
+    <Content Include="Content\img\product\cckt48_1.jpg" />
+    <Content Include="Content\img\product\cckt48_2.jpg" />
+    <Content Include="Content\img\product\cckt48_3.jpg" />
+    <Content Include="Content\img\product\cckt48_4.jpg" />
+    <Content Include="Content\img\product\cckt48_5.jpg" />
+    <Content Include="Content\img\product\cckt49_1.jpg" />
+    <Content Include="Content\img\product\cckt49_2.jpg" />
+    <Content Include="Content\img\product\cckt49_3.jpg" />
+    <Content Include="Content\img\product\cckt49_4.jpg" />
+    <Content Include="Content\img\product\cckt49_5.jpg" />
+    <Content Include="Content\img\product\cckt50_1.jpg" />
+    <Content Include="Content\img\product\cckt50_2.jpg" />
+    <Content Include="Content\img\product\cckt50_3.jpg" />
+    <Content Include="Content\img\product\cckt50_5.jpg" />
+    <Content Include="Content\img\product\cckt51_1.jpg" />
+    <Content Include="Content\img\product\cckt51_2.jpg" />
+    <Content Include="Content\img\product\cckt51_3.jpg" />
+    <Content Include="Content\img\product\cckt51_4.jpg" />
+    <Content Include="Content\img\product\cckt51_5.jpg" />
+    <Content Include="Content\img\product\cckt52_1.jpg" />
+    <Content Include="Content\img\product\cckt52_2.jpg" />
+    <Content Include="Content\img\product\cckt52_3.jpg" />
+    <Content Include="Content\img\product\cckt52_4.jpg" />
+    <Content Include="Content\img\product\cckt52_5.jpg" />
+    <Content Include="Content\img\product\cckt53_1.jpg" />
+    <Content Include="Content\img\product\cckt53_2.jpg" />
+    <Content Include="Content\img\product\cckt53_3.jpg" />
+    <Content Include="Content\img\product\cckt53_4.jpg" />
+    <Content Include="Content\img\product\cckt53_5.jpg" />
+    <Content Include="Content\img\product\cckt54_1.jpg" />
+    <Content Include="Content\img\product\cckt54_2.jpg" />
+    <Content Include="Content\img\product\cckt54_3.jpg" />
+    <Content Include="Content\img\product\cckt54_4.jpg" />
+    <Content Include="Content\img\product\cckt54_5.jpg" />
+    <Content Include="Content\img\product\cckt55_1.jpg" />
+    <Content Include="Content\img\product\cckt55_2.jpg" />
+    <Content Include="Content\img\product\cckt55_3.jpg" />
+    <Content Include="Content\img\product\cckt55_4.jpg" />
+    <Content Include="Content\img\product\cckt55_5.jpg" />
+    <Content Include="Content\img\product\cckt56_1.jpg" />
+    <Content Include="Content\img\product\cckt56_2.jpg" />
+    <Content Include="Content\img\product\cckt56_3.jpg" />
+    <Content Include="Content\img\product\cckt56_4.jpg" />
+    <Content Include="Content\img\product\cckt56_5.jpg" />
+    <Content Include="Content\img\product\cckt57_1.jpg" />
+    <Content Include="Content\img\product\cckt57_2.jpg" />
+    <Content Include="Content\img\product\cckt57_3.jpg" />
+    <Content Include="Content\img\product\cckt57_4.jpg" />
+    <Content Include="Content\img\product\cckt57_5.jpg" />
+    <Content Include="Content\img\product\cckt58_1.jpg" />
+    <Content Include="Content\img\product\cckt58_2.jpg" />
+    <Content Include="Content\img\product\cckt58_3.jpg" />
+    <Content Include="Content\img\product\cckt58_4.jpg" />
+    <Content Include="Content\img\product\cckt58_5.jpg" />
+    <Content Include="Content\img\product\cckt59_1.jpg" />
+    <Content Include="Content\img\product\cckt59_2.jpg" />
+    <Content Include="Content\img\product\cckt59_3.jpg" />
+    <Content Include="Content\img\product\cckt59_4.jpg" />
+    <Content Include="Content\img\product\cckt59_5.jpg" />
+    <Content Include="Content\img\product\cckt60_1.jpg" />
+    <Content Include="Content\img\product\cckt60_2.jpg" />
+    <Content Include="Content\img\product\cckt60_3.jpg" />
+    <Content Include="Content\img\product\cckt60_4.jpg" />
+    <Content Include="Content\img\product\cckt60_5.jpg" />
+    <Content Include="Content\img\product\cckt61_1.jpg" />
+    <Content Include="Content\img\product\cckt61_2.jpg" />
+    <Content Include="Content\img\product\cckt61_3.jpg" />
+    <Content Include="Content\img\product\cckt61_4.jpg" />
+    <Content Include="Content\img\product\cckt61_5.jpg" />
+    <Content Include="Content\img\product\cckt62_1.jpg" />
+    <Content Include="Content\img\product\cckt62_2.jpg" />
+    <Content Include="Content\img\product\cckt62_3.jpg" />
+    <Content Include="Content\img\product\cckt62_4.jpg" />
+    <Content Include="Content\img\product\cckt62_5.jpg" />
+    <Content Include="Content\img\product\cckt63_1.jpg" />
+    <Content Include="Content\img\product\cckt63_2.jpg" />
+    <Content Include="Content\img\product\cckt63_3.jpg" />
+    <Content Include="Content\img\product\cckt63_4.jpg" />
+    <Content Include="Content\img\product\cckt63_5.jpg" />
+    <Content Include="Content\img\product\cckt64_1.jpg" />
+    <Content Include="Content\img\product\cckt64_2.jpg" />
+    <Content Include="Content\img\product\cckt64_3.jpg" />
+    <Content Include="Content\img\product\cckt64_4.jpg" />
+    <Content Include="Content\img\product\cckt64_5.jpg" />
+    <Content Include="Content\img\product\cckt65_1.jpg" />
+    <Content Include="Content\img\product\cckt65_2.jpg" />
+    <Content Include="Content\img\product\cckt65_3.jpg" />
+    <Content Include="Content\img\product\cckt65_4.jpg" />
+    <Content Include="Content\img\product\cckt65_5.jpg" />
+    <Content Include="Content\img\product\cckt66_1.jpg" />
+    <Content Include="Content\img\product\cckt66_2.jpg" />
+    <Content Include="Content\img\product\cckt66_3.jpg" />
+    <Content Include="Content\img\product\cckt66_4.jpg" />
+    <Content Include="Content\img\product\cckt66_5.jpg" />
+    <Content Include="Content\img\product\cckt67_1.jpg" />
+    <Content Include="Content\img\product\cckt67_2.jpg" />
+    <Content Include="Content\img\product\cckt67_3.jpg" />
+    <Content Include="Content\img\product\cckt67_4.jpg" />
+    <Content Include="Content\img\product\cckt67_5.jpg" />
+    <Content Include="Content\img\product\cckt68_1.jpg" />
+    <Content Include="Content\img\product\cckt68_2.jpg" />
+    <Content Include="Content\img\product\cckt68_3.jpg" />
+    <Content Include="Content\img\product\cckt68_4.jpg" />
+    <Content Include="Content\img\product\cckt68_5.jpg" />
+    <Content Include="Content\img\product\cckt69_1.jpg" />
+    <Content Include="Content\img\product\cckt69_2.jpg" />
+    <Content Include="Content\img\product\cckt69_3.jpg" />
+    <Content Include="Content\img\product\cckt69_4.jpg" />
+    <Content Include="Content\img\product\cckt69_5.jpg" />
+    <Content Include="Content\img\product\cckt70_1.jpg" />
+    <Content Include="Content\img\product\cckt70_2.jpg" />
+    <Content Include="Content\img\product\cckt70_3.jpg" />
+    <Content Include="Content\img\product\cckt70_4.jpg" />
+    <Content Include="Content\img\product\cckt70_5.jpg" />
+    <Content Include="Content\img\product\cckt71_1.jpg" />
+    <Content Include="Content\img\product\cckt71_2.jpg" />
+    <Content Include="Content\img\product\cckt71_3.jpg" />
+    <Content Include="Content\img\product\cckt71_4.jpg" />
+    <Content Include="Content\img\product\cckt71_5.jpg" />
+    <Content Include="Content\img\product\cckt72_1.jpg" />
+    <Content Include="Content\img\product\cckt72_2.jpg" />
+    <Content Include="Content\img\product\cckt72_3.jpg" />
+    <Content Include="Content\img\product\cckt72_4.jpg" />
+    <Content Include="Content\img\product\cckt72_5.jpg" />
+    <Content Include="Content\img\product\cckt73_1.jpg" />
+    <Content Include="Content\img\product\cckt73_2.jpg" />
+    <Content Include="Content\img\product\cckt73_3.jpg" />
+    <Content Include="Content\img\product\cckt73_4.jpg" />
+    <Content Include="Content\img\product\cckt73_5.jpg" />
+    <Content Include="Content\img\product\cckt74_1.jpg" />
+    <Content Include="Content\img\product\cckt74_2.jpg" />
+    <Content Include="Content\img\product\cckt74_3.jpg" />
+    <Content Include="Content\img\product\cckt74_4.jpg" />
+    <Content Include="Content\img\product\cckt74_5.jpg" />
+    <Content Include="Content\img\product\cckt75_1.jpg" />
+    <Content Include="Content\img\product\cckt75_2.jpg" />
+    <Content Include="Content\img\product\cckt75_3.jpg" />
+    <Content Include="Content\img\product\cckt75_4.jpg" />
+    <Content Include="Content\img\product\cckt75_5.jpg" />
+    <Content Include="Content\img\product\cckt76_1.jpg" />
+    <Content Include="Content\img\product\cckt76_2.jpg" />
+    <Content Include="Content\img\product\cckt76_3.jpg" />
+    <Content Include="Content\img\product\cckt76_4.jpg" />
+    <Content Include="Content\img\product\cckt76_5.jpg" />
+    <Content Include="Content\img\product\cckt77_1.jpg" />
+    <Content Include="Content\img\product\cckt77_2.jpg" />
+    <Content Include="Content\img\product\cckt77_3.jpg" />
+    <Content Include="Content\img\product\cckt77_4.jpg" />
+    <Content Include="Content\img\product\cckt77_5.jpg" />
+    <Content Include="Content\img\product\cckt78_1.jpg" />
+    <Content Include="Content\img\product\cckt78_2.jpg" />
+    <Content Include="Content\img\product\cckt78_3.jpg" />
+    <Content Include="Content\img\product\cckt78_4.jpg" />
+    <Content Include="Content\img\product\cckt78_5.jpg" />
+    <Content Include="Content\img\product\cckt79_1.jpg" />
+    <Content Include="Content\img\product\cckt79_2.jpg" />
+    <Content Include="Content\img\product\cckt79_3.jpg" />
+    <Content Include="Content\img\product\cckt79_4.jpg" />
+    <Content Include="Content\img\product\cckt79_5.jpg" />
+    <Content Include="Content\img\product\cckt80_1.jpg" />
+    <Content Include="Content\img\product\cckt80_2.jpg" />
+    <Content Include="Content\img\product\cckt80_3.jpg" />
+    <Content Include="Content\img\product\cckt80_4.jpg" />
+    <Content Include="Content\img\product\cckt80_5.jpg" />
+    <Content Include="Content\img\product\cckt81_1.jpg" />
+    <Content Include="Content\img\product\cckt81_2.jpg" />
+    <Content Include="Content\img\product\cckt81_3.jpg" />
+    <Content Include="Content\img\product\cckt81_4.jpg" />
+    <Content Include="Content\img\product\cckt81_5.jpg" />
+    <Content Include="Content\img\product\cckt82_1.jpg" />
+    <Content Include="Content\img\product\cckt82_2.jpg" />
+    <Content Include="Content\img\product\cckt82_3.jpg" />
+    <Content Include="Content\img\product\cckt82_4.jpg" />
+    <Content Include="Content\img\product\cckt82_5.jpg" />
+    <Content Include="Content\img\product\cckt83_1.jpg" />
+    <Content Include="Content\img\product\cckt83_2.jpg" />
+    <Content Include="Content\img\product\cckt83_3.jpg" />
+    <Content Include="Content\img\product\cckt83_4.jpg" />
+    <Content Include="Content\img\product\cckt83_5.jpg" />
+    <Content Include="Content\img\product\cckt84_1.jpg" />
+    <Content Include="Content\img\product\cckt84_2.jpg" />
+    <Content Include="Content\img\product\cckt84_3.jpg" />
+    <Content Include="Content\img\product\cckt84_4.jpg" />
+    <Content Include="Content\img\product\cckt84_5.jpg" />
+    <Content Include="Content\img\product\cckt85_1.jpg" />
+    <Content Include="Content\img\product\cckt85_2.jpg" />
+    <Content Include="Content\img\product\cckt85_3.jpg" />
+    <Content Include="Content\img\product\cckt85_4.jpg" />
+    <Content Include="Content\img\product\cckt85_5.jpg" />
+    <Content Include="Content\img\product\cckt86_1.jpg" />
+    <Content Include="Content\img\product\cckt86_2.jpg" />
+    <Content Include="Content\img\product\cckt86_3.jpg" />
+    <Content Include="Content\img\product\cckt86_4.jpg" />
+    <Content Include="Content\img\product\cckt86_5.jpg" />
+    <Content Include="Content\img\product\cckt87_1.jpg" />
+    <Content Include="Content\img\product\cckt87_2.jpg" />
+    <Content Include="Content\img\product\cckt87_3.jpg" />
+    <Content Include="Content\img\product\cckt87_4.jpg" />
+    <Content Include="Content\img\product\cckt87_5.jpg" />
+    <Content Include="Content\img\product\cckt88_1.jpg" />
+    <Content Include="Content\img\product\cckt88_2.jpg" />
+    <Content Include="Content\img\product\cckt88_3.jpg" />
+    <Content Include="Content\img\product\cckt88_4.jpg" />
+    <Content Include="Content\img\product\cckt88_5.jpg" />
+    <Content Include="Content\img\product\cckt89_1.jpg" />
+    <Content Include="Content\img\product\cckt89_2.jpg" />
+    <Content Include="Content\img\product\cckt89_3.jpg" />
+    <Content Include="Content\img\product\cckt89_4.jpg" />
+    <Content Include="Content\img\product\cckt89_5.jpg" />
+    <Content Include="Content\img\product\cckt90_1.jpg" />
+    <Content Include="Content\img\product\cckt90_2.jpg" />
+    <Content Include="Content\img\product\cckt90_3.jpg" />
+    <Content Include="Content\img\product\cckt90_4.jpg" />
+    <Content Include="Content\img\product\cckt90_5.jpg" />
+    <Content Include="Content\img\product\cckt91_1.jpg" />
+    <Content Include="Content\img\product\cckt91_2.jpg" />
+    <Content Include="Content\img\product\cckt91_3.jpg" />
+    <Content Include="Content\img\product\cckt91_4.jpg" />
+    <Content Include="Content\img\product\cckt91_5.jpg" />
+    <Content Include="Content\img\product\cckt92_1.jpg" />
+    <Content Include="Content\img\product\cckt92_2.jpg" />
+    <Content Include="Content\img\product\cckt92_3.jpg" />
+    <Content Include="Content\img\product\cckt92_4.jpg" />
+    <Content Include="Content\img\product\cckt92_5.jpg" />
+    <Content Include="Content\img\product\cckt93_1.jpg" />
+    <Content Include="Content\img\product\cckt93_2.jpg" />
+    <Content Include="Content\img\product\cckt93_3.jpg" />
+    <Content Include="Content\img\product\cckt93_4.jpg" />
+    <Content Include="Content\img\product\cckt93_5.jpg" />
+    <Content Include="Content\img\product\cckt94_ 2.jpg" />
+    <Content Include="Content\img\product\cckt94_ 3.jpg" />
+    <Content Include="Content\img\product\cckt94_ 4.jpg" />
+    <Content Include="Content\img\product\cckt94_ 5.jpg" />
+    <Content Include="Content\img\product\cckt94_1.jpg" />
+    <Content Include="Content\img\product\cckt95_1.jpg" />
+    <Content Include="Content\img\product\cckt95_2.jpg" />
+    <Content Include="Content\img\product\cckt95_3.jpg" />
+    <Content Include="Content\img\product\cckt95_4.jpg" />
+    <Content Include="Content\img\product\cckt95_5.jpg" />
+    <Content Include="Content\img\product\cckt96_1.jpg" />
+    <Content Include="Content\img\product\cckt96_2.jpg" />
+    <Content Include="Content\img\product\cckt96_3.jpg" />
+    <Content Include="Content\img\product\cckt96_4.jpg" />
+    <Content Include="Content\img\product\cckt96_5.jpg" />
+    <Content Include="Content\img\product\cckt97_1.jpg" />
+    <Content Include="Content\img\product\cckt97_2.jpg" />
+    <Content Include="Content\img\product\cckt97_3.jpg" />
+    <Content Include="Content\img\product\cckt97_4.jpg" />
+    <Content Include="Content\img\product\cckt97_5.jpg" />
+    <Content Include="Content\img\product\cckt98_1.jpg" />
+    <Content Include="Content\img\product\cckt98_2.jpg" />
+    <Content Include="Content\img\product\cckt98_3.jpg" />
+    <Content Include="Content\img\product\cckt98_4.jpg" />
+    <Content Include="Content\img\product\cckt98_5.jpg" />
+    <Content Include="Content\img\product\cckt99_1.jpg" />
+    <Content Include="Content\img\product\cckt99_2.jpg" />
+    <Content Include="Content\img\product\cckt99_3.jpg" />
+    <Content Include="Content\img\product\cckt99_4.jpg" />
+    <Content Include="Content\img\product\cckt99_5.jpg" />
+    <Content Include="Content\img\product\_2.jpg" />
+    <Content Include="Content\img\product\_3.jpg" />
+    <Content Include="Content\img\product\_4.jpg" />
+    <Content Include="Content\img\product\_5.jpg" />
+    <Content Include="Content\js\top.js" />
+    <Content Include="Content\scss\style.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Areas\HelpPage\Views\Web.config" />
+    <Content Include="Areas\HelpPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\ResourceModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Index.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\TextSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\SimpleTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Samples.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\Parameters.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ModelDescriptionLink.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\KeyValuePairModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\InvalidSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ImageSample.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\EnumTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\DictionaryModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ComplexTypeModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
+    <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Content\scss\style.css.map" />
+    <Content Include="Content\scss\style.scss" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Index.cshtml" />
+    <Content Include="Views\Product\Brand.cshtml" />
+    <Content Include="Views\Product\Gender.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59420</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44380/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

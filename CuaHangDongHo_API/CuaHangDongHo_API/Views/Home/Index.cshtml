@@ -1,0 +1,264 @@
+﻿@model IEnumerable<CuaHangDongHo_API.Models.product>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<!--slider-->
+<div class="">
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item size  active">
+                <img src="https://cdna.artstation.com/p/assets/images/images/031/586/906/large/murugendra-hiremath-00001212.jpg?1604034460"
+                     class="d-block " alt="...">
+            </div>
+            <div class="carousel-item size">
+                <img src="https://dcassetcdn.com/design_img/3080524/553061/553061_17028565_3080524_b39ce860_image.jpg"
+                     class="d-block " alt="...">
+            </div>
+            <div class="carousel-item size">
+                <img src="https://dcassetcdn.com/design_img/3080524/696432/696432_17049499_3080524_a9454de7_image.jpg"
+                     class="d-block " alt="...">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+</div>
+<!--slider-->
+
+<div class="container best-deal ">
+    <div class="row gy-5 text-center">
+        <div class="col-xl-6 col-lg-12">
+            <a href="./product.html">
+                <img src="https://htmldemo.net/ruiz/ruiz/assets/images/banner/banner-01.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-xl-6 col-lg-12">
+            <a href="./product.html">
+                <img src="https://htmldemo.net/ruiz/ruiz/assets/images/banner/banner-02.jpg" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+<!--best seller-->
+<div class="best-seller container">
+    <h5 class="title">Best seller products</h5>
+    <div class="row gy-5">
+       @foreach (var item in Model)
+       {
+           @item.product_name
+       }
+            <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6 ">
+                <div class="p-3 border rounded-3 ">
+                    <div class="card-product position-relative">
+                        <img src="~/Content/img/product/b.avatar"
+                             class="img-thumbnail border-0"
+                             alt="">
+                        <a href="">
+                            <h5 class="card-product__name text-center">
+                                b.product_name
+                            </h5>
+                        </a>
+                        <div class="d-flex justify-content-center">
+                            <p class="card-product__new">$(b.price - (b.price * b.discount / 100))</p>
+                            <p class="card-product__old text-decoration-line-through">$b.price</p>
+                        </div>
+                        <div class="card-label">
+                            <h5 class="card-label__discount position-absolute">b.discount%</h5>
+                        </div>
+                        <div class="card-btn position-absolute">
+                            <button class="card-btn__cart">
+                                <i class="fa-solid fa-cart-arrow-down"></i>
+                            </button>
+                            <button class="card-btn__search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        
+        
+
+
+    </div>
+</div>
+<!--best seller-->
+
+<div class="container best-deal">
+    <div class="row gy-5 text-center">
+        <div class="col-xl-6 col-lg-12">
+            <a href="./product.html">
+                <img src="https://htmldemo.net/ruiz/ruiz/assets/images/banner/banner-03.jpg" alt="">
+            </a>
+        </div>
+        <div class="col-xl-6 col-lg-12">
+            <a href="./product.html">
+                <img src="https://htmldemo.net/ruiz/ruiz/assets/images/banner/banner-04.jpg" alt="">
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container menu">
+    <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-seller-tab" data-bs-toggle="pill" data-bs-target="#pills-seller"
+                    type="button" role="tab" aria-controls="pills-seller" aria-selected="true">
+                Best Seller
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-new-arrival-tab" data-bs-toggle="pill"
+                    data-bs-target="#pills-new-arrival"
+                    type="button" role="tab" aria-controls="pills-new-arrival" aria-selected="false">
+                New Arrival
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-sale-tab" data-bs-toggle="pill" data-bs-target="#pills-sale"
+                    type="button" role="tab" aria-controls="pills-sale" aria-selected="false">
+                On Sale
+            </button>
+        </li>
+    </ul>
+    <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-seller" role="tabpanel" aria-labelledby="pills-seller-tab">
+            <div class="row gy-5">
+
+                <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6">
+                    <div class="p-3 border rounded-3 ">
+                        <div class="card-product position-relative">
+                            <img src="~/Content/img/product/b.avatar"
+                                 class="img-thumbnail border-0"
+                                 alt="">
+                            <a href=""><h5 class="card-product__name text-center">b.product_name</h5></a>
+                            <div class="d-flex justify-content-center">
+                                <p class="card-product__new">$(b.price - (b.price * b.discount / 100))</p>
+                                <p class="card-product__old text-decoration-line-through">$b.price</p>
+                            </div>
+                            <div class="card-label">
+                                <h5 class="card-label__discount position-absolute">b.discount%</h5>
+                            </div>
+                            <div class="card-btn position-absolute">
+                                <button class="card-btn__cart">
+                                    <i class="fa-solid fa-cart-arrow-down"></i>
+                                </button>
+                                <button class="card-btn__search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                }
+
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-new-arrival" role="tabpanel" aria-labelledby="pills-new-arrival-tab">
+            <div class="row gy-5">
+
+                @*@foreach (var n in Model)
+                {
+                    <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6">
+                        <div class="p-3 border rounded-3 ">
+                            <div class="card-product position-relative">
+                                <img src="~/Content/img/product/@n.avatar"
+                                     class="img-thumbnail border-0"
+                                     alt="">
+                                <a href=""><h5 class="card-product__name text-center">@n.product_name</h5></a>
+                                <div class="d-flex justify-content-center">
+                                    <p class="card-product__new">$@(n.price - (n.price * n.discount / 100))</p>
+                                    <p class="card-product__old text-decoration-line-through">$@n.price</p>
+                                </div>
+                                <div class="card-label">
+                                    <h5 class="card-label__discount position-absolute">@n.discount%</h5>
+                                </div>
+                                <div class="card-btn position-absolute">
+                                    <button class="card-btn__cart">
+                                        <i class="fa-solid fa-cart-arrow-down"></i>
+                                    </button>
+                                    <button class="card-btn__search">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                }*@
+                
+
+
+            </div>
+        </div>
+        <div class="tab-pane fade" id="pills-sale" role="tabpanel" aria-labelledby="pills-sale-tab">
+            <div class="row gy-5">
+
+                <div class="col-xxl-3 col-xl-3 col-lg-4 col-md-6">
+                    <div class="p-3 border rounded-3 ">
+                        <div class="card-product position-relative">
+                            <img src="~/Content/img/product/o.avatar"
+                                 class="img-thumbnail border-0"
+                                 alt="">
+                            <a href=""><h5 class="card-product__name text-center">o.product_name</h5></a>
+                            <div class="d-flex justify-content-center">
+                                <p class="card-product__new">$(o.price - (o.price * o.discount / 100))</p>
+                                <p class="card-product__old text-decoration-line-through">$o.price</p>
+                            </div>
+                            <div class="card-label">
+                                <h5 class="card-label__discount position-absolute">o.discount%</h5>
+                            </div>
+                            <div class="card-btn position-absolute">
+                                <button class="card-btn__cart">
+                                    <i class="fa-solid fa-cart-arrow-down"></i>
+                                </button>
+                                <button class="card-btn__search">
+                                    <i class="fa-solid fa-magnifying-glass"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                }
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container pt-5 pb-5">
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+        <h5 class="title">
+            Join Our
+            <p>Newsletter Now</p>
+        </h5>
+        <form action="" method="post">
+            <div class="input-group mb-3">
+                <input type="search" class="form-subcribe" placeholder="Your email address">
+                <button class="btn btn-subcribe" type="button" id="button-addon3">
+                    Subcribe
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

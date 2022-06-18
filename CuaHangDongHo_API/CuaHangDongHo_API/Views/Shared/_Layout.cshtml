@@ -1,0 +1,257 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Home</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/Content/scss/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+
+</head>
+<body>
+
+    <header class="container-fluid">
+        <div class="container">
+            <div class="d-flex justify-content-between pt-4">
+                <div class="">
+                    <a href="./index.html">
+                        <img src="https://htmldemo.net/ruiz/ruiz/assets/images/logo/logo.png" alt="">
+                    </a>
+                </div>
+                <div class=" d-none d-xl-flex">
+                    <form action="" method="post">
+                        <div class="input-group mb-3">
+                            <input type="search" class="form-search" placeholder="Search...">
+                            <button class="btn btn-search" type="submit" id="button-addon2">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="pt-3">
+                    <button class="btn-user user position-relative">
+                        <i class="fa-solid fa-user"></i>
+                        <ul class="subuser position-absolute animated animatedFadeInUp fadeInUp">
+
+                            <li class="subuser-item">
+                                <a href="./login.html">Login</a>
+                            </li>
+                            <li class="subuser-item">
+                                <a href="./register.html">Register</a>
+                            </li>
+                            <li class="subuser-item">
+                                <a href="./personal.html">Logout</a>
+                            </li>
+
+                        </ul>
+                    </button>
+                    <button class="btn-cart">
+                        <a href="./cart.html">
+                            <i class="fa-solid fa-cart-arrow-down"></i>
+                        </a>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav class="container-fluid">
+        <ul class="d-flex justify-content-center align-items-center d-none d-lg-flex d-xl-flex">
+            <li class="nav-item">
+                <a href="./Home" class="nav-link">Home</a>
+
+            </li>
+            <li class="nav-item">
+                <a href="./about.html" class="nav-link">About</a>
+            </li>
+            <li class="nav-item position-relative brand">
+                <a href="~/product/brand?bid=b01" class="nav-link ">Brand</a>
+
+                <ul class="submenu position-absolute animated animatedFadeInUp fadeInUp">
+                    <li class="submenu-item">
+                        <a href="~/product/brand?bid=b01">B01</a>
+                    </li>
+                    <li class="submenu-item">
+                        <a href="~/product/brand?bid=b02">B02</a>
+                    </li>
+                    <li class="submenu-item">
+                        <a href="~/product/brand?bid=b03">B03</a>
+                    </li>
+                    <li class="submenu-item">
+                        <a href="~/product/brand?bid=b04">B04</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="nav-item">
+                <a href="~/product/gender?gen=male" class="nav-link">Watch Men</a>
+            </li>
+            <li class="nav-item">
+                <a href="~/product/gender?gen=female" class="nav-link">Watch Women</a>
+            </li>
+            <li class="nav-item">
+                <a href="./contact.html" class="nav-link">Contact</a>
+            </li>
+
+        </ul>
+        <div class="container d-flex justify-content-end d-none d-md-flex d-sm-flex d-lg-none">
+            <button class="btn btn-bar" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBackdrop"
+                    aria-controls="offcanvasWithBackdrop">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+    <div class="nav-mobile ">
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1"
+             id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Colored with scrolling</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Try scrolling the rest of the page to see this option in action.</p>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasWithBackdrop"
+             aria-labelledby="offcanvasWithBackdropLabel">
+            <div class="offcanvas-body">
+                <form action="" method="post">
+                    <div class="input-group mb-3">
+                        <input type="search" class="form-searchMobile" placeholder="Search...">
+                        <button class="btn btn-search" type="button" id="">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </div>
+                </form>
+                <ul class="d-flex flex-column ">
+                    <li class="nav-item">
+                        <a href="./index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " data-bs-toggle="collapse" href="#multiCollapseExample1" role="button"
+                           aria-expanded="false" aria-controls="multiCollapseExample1">
+                            Brand
+                            <i class="fa-solid fa-caret-down"></i>
+                        </a>
+                        <div class="row">
+                            <div class="col">
+                                <div class="collapse multi-collapse" id="multiCollapseExample1">
+                                    <div class="brand-list">
+                                        <p><a href="./product.html">Casio</a></p>
+                                        <p><a href="./product.html">Orient</a></p>
+                                        <p><a href="./product.html">Titan</a></p>
+                                        <p><a href="./product.html">Casio</a></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./product.html" class="nav-link">Watch Men</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./product.html" class="nav-link">Watch Women</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contact.html" class="nav-link">Contact</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+             aria-labelledby="offcanvasWithBothOptionsLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdroped with scrolling</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>Try scrolling the rest of the page to see this option in action.</p>
+            </div>
+        </div>
+    </div>
+
+    @RenderBody()
+
+    <div class="d-flex flex-column h-100">
+        <!-- FOOTER -->
+        <footer class="w-100 py-4 flex-shrink-0">
+            <div class="container py-4">
+                <div class="row gy-4 gx-5">
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="h1 text-white">FB.</h5>
+                        <p class="small text-muted">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt.
+                        </p>
+                        <p class="small text-muted mb-0">
+                            &copy; Copyrights. All rights reserved. <a class="text-primary"
+                                                                       href="#">WatchStore.com</a>
+                        </p>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <h5 class="text-white mb-3">Quick links</h5>
+                        <ul class="list-unstyled text-muted">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Get started</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-2 col-md-6">
+                        <h5 class="text-white mb-3">Quick links</h5>
+                        <ul class="list-unstyled text-muted">
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">About</a></li>
+                            <li><a href="#">Get started</a></li>
+                            <li><a href="#">FAQ</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <h5 class="text-white mb-3">Newsletter</h5>
+                        <p class="small text-muted">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt.
+                        </p>
+                        <form action="#">
+                            <div class="input-group mb-3">
+                                <input class="form-control" type="text" placeholder="Recipient's username"
+                                       aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button class="btn btn-primary" id="button-addon5" type="button">
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <button class="btn btn-top" onclick="topFunction()">
+        <i class="fa-solid fa-caret-up"></i>
+    </button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="~/Content/js/top.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+            integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
